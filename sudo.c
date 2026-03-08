@@ -5,17 +5,22 @@ void enter();
 char board[9][9];
 int main()
 {
-
-
+//get data from file
+char ch;
+FILE *ptr=fopen("data.txt","r");
 for(int i=0;i<9;i++)
 {
-    for(int j=0;j<9;j++)
-    {
-        board[i][j]='$';
+for(int j=0;j<9;j++)
+{
+  if((ch=fgetc(ptr))!=EOF)
+ {
+        board[i][j]=ch;
+    
 
-    }
+ }
+ 
 }
-
+}
 while(1)
 {
 printf("MENU\n");
@@ -75,6 +80,7 @@ printf("prev line ran\n");
 
 
 }
+
 
 
 
